@@ -15,7 +15,7 @@ import lombok.Getter;
  * The Class Traceur.
  */
 @Component
-public class Traceur {
+public class ExportTraceur {
 
 	@Getter
 	private List<Message> msg = new ArrayList<Message>();

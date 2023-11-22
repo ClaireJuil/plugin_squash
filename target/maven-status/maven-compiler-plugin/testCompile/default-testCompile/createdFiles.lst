@@ -1,0 +1,3 @@
+org\squashtest\tm\plugin\custom\report\segur\ExcelRowTest.class
+org\squashtest\tm\plugin\custom\report\segur\ExcelWriterTest.class
+org\squashtest\tm\plugin\custom\report\segur\CufToExcelDataTest.class

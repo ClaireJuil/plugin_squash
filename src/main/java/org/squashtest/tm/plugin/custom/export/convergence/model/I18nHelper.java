@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 /**
  * The Class I18nHelper.
  */
-@Component("custom.report.segur.i18nHelper")
+@Component("custom.export.convergence.i18nHelper")
 public class I18nHelper implements MessageSourceAware {
 
 	protected MessageSource msgSource;

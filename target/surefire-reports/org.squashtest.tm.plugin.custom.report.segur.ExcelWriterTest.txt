@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: org.squashtest.tm.plugin.custom.report.segur.ExcelWriterTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 5.02 s <<< FAILURE! - in org.squashtest.tm.plugin.custom.report.segur.ExcelWriterTest
+generateExcelFilePublication  Time elapsed: 1.005 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.squashtest.tm.plugin.custom.report.segur.ExcelWriterTest.generateExcelFilePublication(ExcelWriterTest.java:224)
+
+generateExcelFilePrepublication  Time elapsed: 3.395 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <467> but was: <0>
+	at org.squashtest.tm.plugin.custom.report.segur.ExcelWriterTest.generateExcelFilePrepublication(ExcelWriterTest.java:249)
+

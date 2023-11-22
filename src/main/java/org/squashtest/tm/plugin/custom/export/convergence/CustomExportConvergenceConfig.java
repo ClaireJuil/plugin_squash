@@ -26,7 +26,7 @@ import org.squashtest.tm.api.report.form.composite.ProjectPickerOption;
  * The Class CustomReportSegurConfig.
  */
 @Configuration
-public class CustomReportSegurConfig {
+public class CustomExportConvergenceConfig {
 
 	/**
 	 * Segur report plugin.
@@ -35,8 +35,8 @@ public class CustomReportSegurConfig {
 	 * @return the report plugin
 	 */
 	@Bean
-	public ReportPlugin segurReportPlugin(SegurExcelReport segurReport) {
-		Report[] reports = { segurReport };
+	public ReportPlugin convergenceExportPlugin(ConvergenceExcelExport convergenceExport) {
+		Report[] reports = { convergenceExport };
 		ReportPlugin reportPlugin = new ReportPlugin();
 		reportPlugin.setReports(reports);
 		return reportPlugin;
@@ -49,13 +49,13 @@ public class CustomReportSegurConfig {
 	 * @return the segur excel report
 	 */
 	@Bean
-	public SegurExcelReport segurReport(Form segurForm) {
-		SegurExcelReport segurReport = new SegurExcelReport();
+	public ConvergenceExcelExport convergenceExport(Form convergenceExportForm) {
+		ConvergenceExcelExport segurReport = new ConvergenceExcelExport();
 		segurReport.setCategory(StandardReportCategory.PREPARATION_PHASE);
 		segurReport.setType(StandardReportType.SPECIFICATION_BOOK); // GENERIC
 		segurReport.setLabelKey("title");
 		segurReport.setDescriptionKey("description");
-		segurReport.setForm(segurForm.getInputs().toArray(new Input[segurForm.getInputs().size()]));
+		segurReport.setForm(convergenceExportForm.getInputs().toArray(new Input[convergenceExportForm.getInputs().size()]));
 		return segurReport;
 	}
 	/**
@@ -65,11 +65,11 @@ public class CustomReportSegurConfig {
 	 * @return the form
 	 */
 	@Bean
-	public Form segurForm(@Named("segurRadioButton") RadioButtonsGroup segurRadioButton) {//,
+	public Form convergenceExport(@Named("convergenceRadioButton") RadioButtonsGroup convergenceRadioButton) {//,
 	//					  @Named("templateSelectionRadioButton") RadioButtonsGroup templateSelectionRadioButton) {
 		Form form = new Form();
 		List<Input> inputs = new ArrayList<Input>();
-		inputs.add(segurRadioButton);
+		inputs.add(convergenceRadioButton);
 		//inputs.add(templateSelectionRadioButton);
 		form.setInputs(inputs);
 		return form;
@@ -82,10 +82,10 @@ public class CustomReportSegurConfig {
 	 * @param projectPickerOption the project picker option
 	 * @return the radio buttons group
 	 */
-	@Bean(name = "segurRadioButton")
+	@Bean(name = "convergenceRadioButton")
 	public RadioButtonsGroup segurRadioButton(
-			@Named("milestonePickerOption") MilestonePickerOption milestonePickerOption,
-			@Named("projectPickerOption") ProjectPickerOption projectPickerOption) {
+			@Named("milestonePicker") MilestonePickerOption milestonePickerOption,
+			@Named("projectPicker") ProjectPickerOption projectPickerOption) {
 		RadioButtonsGroup button = new RadioButtonsGroup();
 		button.setLabelKey("button.label.key");
 		button.setName("segurSelectionMode");
@@ -103,7 +103,7 @@ public class CustomReportSegurConfig {
 	 *
 	 * @return the milestone picker option
 	 */
-	@Bean(name = "milestonePickerOption")
+	@Bean(name = "milestonePicker")
 	public MilestonePickerOption milestonePickerOption() {
 		MilestonePickerOption picker = new MilestonePickerOption();
 		picker.setLabelKey("select.milestone");
@@ -118,7 +118,7 @@ public class CustomReportSegurConfig {
 	 *
 	 * @return the project picker option
 	 */
-	@Bean(name = "projectPickerOption")
+	@Bean(name = "projectPicker")
 	public ProjectPickerOption projectPickerOption() {
 		ProjectPickerOption picker = new ProjectPickerOption();
 		picker.setLabelKey("select.project");
@@ -128,48 +128,48 @@ public class CustomReportSegurConfig {
 		return picker;
 	}
 
-	@Bean(name = "templateSelectionRadioButton")
-	public RadioButtonsGroup templateSelectionRadioButton(
-			@Named("templateDevOption") OptionInput templateDevOption,
-			@Named("templateRemRcOption") OptionInput templateRemRcOption
-	) {
-		RadioButtonsGroup button2 = new RadioButtonsGroup();
-		button2.setLabelKey("button2.label.key");
-		button2.setName("templateSelectionMode");
-		button2.setRequired(true);
-		List<OptionInput> options = new ArrayList<OptionInput>();
-		options.add(templateDevOption);
-		options.add(templateRemRcOption);
-		button2.setOptions(options);
-		return button2;
-	}
+//	@Bean(name = "exportTemplateSelectionRadioButton")
+//	public RadioButtonsGroup templateSelectionRadioButton(
+//			@Named("exportTemplateDevOption") OptionInput templateDevOption,
+//			@Named("exportTemplateRemRcOption") OptionInput templateRemRcOption
+//	) {
+//		RadioButtonsGroup button2 = new RadioButtonsGroup();
+//		button2.setLabelKey("button2.label.key");
+//		button2.setName("templateSelectionMode");
+//		button2.setRequired(true);
+//		List<OptionInput> options = new ArrayList<OptionInput>();
+//		options.add(templateDevOption);
+//		options.add(templateRemRcOption);
+//		button2.setOptions(options);
+//		return button2;
+//	}
 	/**
 	 * Template dev option.
 	 *
 	 * @return the template dev option
 	 */
-	@Bean(name = "templateDevOption")
-	public OptionInput templateDevOption() {
-		OptionInput devOption = new OptionInput();
-		devOption.setLabelKey("dev.template.label");
-		devOption.setValue("TEST");
-		devOption.setGivesAccessTo("TEST"); //
-		devOption.setDefaultSelected(false);
-		return devOption;
-	}
+//	@Bean(name = "exportTemplateDevOption")
+//	public OptionInput templateDevOption() {
+//		OptionInput devOption = new OptionInput();
+//		devOption.setLabelKey("dev.template.label");
+//		devOption.setValue("TEST");
+//		devOption.setGivesAccessTo("TEST"); //
+//		devOption.setDefaultSelected(false);
+//		return devOption;
+//	}
 
 	/**
 	 * Template RemRC option.
 	 *
 	 * @return the template RemRC option
 	 */
-	@Bean(name = "templateRemRcOption")
-	public OptionInput templateRemRcOption() {
-		OptionInput remRCOption = new OptionInput();
-		remRCOption.setLabelKey("remrc.template.label");
-		remRCOption.setValue("TEST2");
-		remRCOption.setGivesAccessTo("TEST2");
-		remRCOption.setDefaultSelected(true);
-		return remRCOption;
-	}
+//	@Bean(name = "exportTemplateRemRcOption")
+//	public OptionInput templateRemRcOption() {
+//		OptionInput remRCOption = new OptionInput();
+//		remRCOption.setLabelKey("remrc.template.label");
+//		remRCOption.setValue("TEST2");
+//		remRCOption.setGivesAccessTo("TEST2");
+//		remRCOption.setDefaultSelected(true);
+//		return remRCOption;
+//	}
 }

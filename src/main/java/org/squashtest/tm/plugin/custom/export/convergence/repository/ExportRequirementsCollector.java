@@ -18,7 +18,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
 /**
  * The Interface RequirementsCollector.
  */
-public interface RequirementsCollector {
+public interface ExportRequirementsCollector {
 
 	/**
 	 * Find milestone by milestone id.

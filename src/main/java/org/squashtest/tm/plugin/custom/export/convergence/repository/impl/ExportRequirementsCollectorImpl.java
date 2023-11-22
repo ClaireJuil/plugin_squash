@@ -36,6 +36,7 @@ import java.util.Set;
 import javax.inject.Inject;
 
 import org.jooq.DSLContext;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.squashtest.tm.jooq.domain.tables.TestCaseLibraryNode;
 import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
@@ -46,13 +47,13 @@ import org.squashtest.tm.plugin.custom.export.convergence.model.ReqModel;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ReqStepBinding;
 import org.squashtest.tm.plugin.custom.export.convergence.model.Step;
 import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
-import org.squashtest.tm.plugin.custom.export.convergence.repository.RequirementsCollector;
+import org.squashtest.tm.plugin.custom.export.convergence.repository.ExportRequirementsCollector;
 
 /**
  * The Class RequirementsCollectorImpl.
  */
-@Repository
-public class RequirementsCollectorImpl implements RequirementsCollector {
+@Repository @Qualifier("exportConvergenceRepository")
+public class ExportRequirementsCollectorImpl implements ExportRequirementsCollector {
 
 	@Inject
 	private DSLContext dsl;

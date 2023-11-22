@@ -19,18 +19,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.squashtest.tm.api.report.criteria.Criteria;
-import org.squashtest.tm.plugin.custom.export.convergence.Traceur;
+import org.squashtest.tm.plugin.custom.export.convergence.ExportTraceur;
 import org.squashtest.tm.plugin.custom.export.convergence.model.PerimeterData;
-import org.squashtest.tm.plugin.custom.export.convergence.repository.RequirementsCollector;
-import org.squashtest.tm.plugin.custom.export.convergence.service.ReportGeneratorService;
+import org.squashtest.tm.plugin.custom.export.convergence.repository.ExportRequirementsCollector;
+import org.squashtest.tm.plugin.custom.export.convergence.service.ExportGeneratorService;
 
 
 /**
  * The Class ReportGeneratorServiceImpl.
  */
 @Service
-public class ReportGeneratorServiceImpl implements ReportGeneratorService {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ReportGeneratorServiceImpl.class);
+public class ExportGeneratorServiceImpl implements ExportGeneratorService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExportGeneratorServiceImpl.class);
 	
 	/** The Constant TEMPLATE_NAME. */
 	//public static final String TEMPLATE_NAME = "template-segur-requirement-export.xlsx";
@@ -54,13 +54,13 @@ public class ReportGeneratorServiceImpl implements ReportGeneratorService {
 	public static final String EXTENSION = ".xlsx";
 
 	@Inject
-	RequirementsCollector reqCollector;
+	ExportRequirementsCollector reqCollector;
 
 	@Override
 	public File generateReport(Map<String, Criteria> criterias) {
-		Traceur traceur = new Traceur();
+		ExportTraceur traceur = new ExportTraceur();
 
-		ExcelWriter writer = new ExcelWriter(traceur);
+		ExportExcelWriter writer = new ExportExcelWriter(traceur);
 
 		LOGGER.info(" SquashTm-segur plugin report ");
 		// lecture des critères

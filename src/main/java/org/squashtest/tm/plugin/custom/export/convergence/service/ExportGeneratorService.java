@@ -12,7 +12,7 @@ import org.squashtest.tm.api.report.criteria.Criteria;
 /**
  * The Interface ReportGeneratorService.
  */
-public interface ReportGeneratorService {
+public interface ExportGeneratorService {
 	
 	/**
 	 * Generate report.

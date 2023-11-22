@@ -15,7 +15,6 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.common.usermodel.Hyperlink;
-import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -34,7 +33,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
 import org.squashtest.tm.plugin.custom.export.convergence.Level;
 import org.squashtest.tm.plugin.custom.export.convergence.Message;
 import org.squashtest.tm.plugin.custom.export.convergence.Parser;
-import org.squashtest.tm.plugin.custom.export.convergence.Traceur;
+import org.squashtest.tm.plugin.custom.export.convergence.ExportTraceur;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ExcelRow;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ReqStepBinding;
 import org.squashtest.tm.plugin.custom.export.convergence.model.Step;
@@ -44,7 +43,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
  * The Class ExcelWriter.
  */
 @Component
-public class ExcelWriter {
+public class ExportExcelWriter {
 
 	private static final String EXCLUDED_TC_STATUS = "OBSOLETE";
 
@@ -54,7 +53,7 @@ public class ExcelWriter {
 
 	private static final int MAX_STEPS = 10;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(ExcelWriter.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExportExcelWriter.class);
 
 	/** The Constant REM_SHEET_INDEX. */
 	// onglets
@@ -155,7 +154,7 @@ public class ExcelWriter {
 	/** The Constant ERROR_COLUMN_MSG. */
 	public static final int ERROR_COLUMN_MSG = 2;
 
-	private Traceur traceur;
+	private ExportTraceur traceur;
 
 	private String squashBaseUrl;
 
@@ -164,7 +163,7 @@ public class ExcelWriter {
 	 *
 	 * @param traceur the traceur
 	 */
-	public ExcelWriter(Traceur traceur) {
+	public ExportExcelWriter(ExportTraceur traceur) {
 		super();
 		this.traceur = traceur;
 	}
@@ -211,8 +210,8 @@ public class ExcelWriter {
 		linkFont.setFontHeight(height);
 		linkFont.setFontName("ARIAL");
 		linkFont.setUnderline(XSSFFont.U_SINGLE);
-		linkFont.setColor(HSSFColor.HSSFColorPredefined.BLUE.getIndex());
-		//linkFont.setColor(HSSFColor.BLUE.index);
+	//	linkFont.setColor(HSSFColor.HSSFColorPredefined.BLUE.getIndex());
+		linkFont.setColor(HSSFColor.BLUE.index);
 		// boucle sur les exigences
 		for (ExcelRow req : data.getRequirements()) {
 
@@ -319,8 +318,8 @@ public class ExcelWriter {
 					c33.setCellStyle(c33Style);
 					c33.setCellValue(req.getReference());
 					
-					//XSSFHyperlink c33link = (XSSFHyperlink) helper.createHyperlink(Hyperlink.LINK_URL);
-					XSSFHyperlink c33link = (XSSFHyperlink) helper.createHyperlink(HyperlinkType.URL);
+					XSSFHyperlink c33link = (XSSFHyperlink) helper.createHyperlink(Hyperlink.LINK_URL);
+					//XSSFHyperlink c33link = (XSSFHyperlink) helper.createHyperlink(HyperlinkType.URL);
 					
 					
 					c33link.setAddress(String.format(REQ_CONTEXT_PATH, squashBaseUrl, req.getReqId()));
@@ -334,8 +333,8 @@ public class ExcelWriter {
 					if (testCase.getTcln_id() > 0) {
 						c34.setCellValue(testCase.getReference());
 						
-						//XSSFHyperlink c34link = (XSSFHyperlink) helper.createHyperlink(Hyperlink.LINK_URL);
-						XSSFHyperlink c34link = (XSSFHyperlink) helper.createHyperlink(HyperlinkType.URL);
+						XSSFHyperlink c34link = (XSSFHyperlink) helper.createHyperlink(Hyperlink.LINK_URL);
+						//XSSFHyperlink c34link = (XSSFHyperlink) helper.createHyperlink(HyperlinkType.URL);
 						
 						c34link.setAddress(String.format(TESTCASE_CONTEXT_PATH, squashBaseUrl, testCase.getTcln_id()));
 						c34.setHyperlink(c34link);
@@ -349,8 +348,8 @@ public class ExcelWriter {
 					if (req.getSocleReqId() > 0) {
 						c35.setCellValue(req.getReferenceSocle());
 						
-						//XSSFHyperlink c35link = (XSSFHyperlink) helper.createHyperlink(Hyperlink.LINK_URL);
-						XSSFHyperlink c35link = (XSSFHyperlink) helper.createHyperlink(HyperlinkType.URL);
+						XSSFHyperlink c35link = (XSSFHyperlink) helper.createHyperlink(Hyperlink.LINK_URL);
+						//XSSFHyperlink c35link = (XSSFHyperlink) helper.createHyperlink(HyperlinkType.URL);
 						
 						c35link.setAddress(String.format(REQ_CONTEXT_PATH, squashBaseUrl, req.getSocleReqId()));
 						c35.setHyperlink(c35link);
@@ -613,7 +612,7 @@ public class ExcelWriter {
 			int line = 0;
 			Row firstRow = errorSheet.createRow(line);
 			firstRow.createCell(ERROR_COLUMN_MSG).setCellValue(
-					"ATTENTION, le nombre maximum d'erreurs/warnings affichés est : " + Traceur.getMAX_MSG());
+					"ATTENTION, le nombre maximum d'erreurs/warnings affichés est : " + ExportTraceur.getMAX_MSG());
 
 			for (Message msgLine : msg) {
 				Row row = errorSheet.createRow(++line);
