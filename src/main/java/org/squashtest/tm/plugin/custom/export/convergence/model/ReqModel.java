@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
 import org.squashtest.tm.plugin.custom.export.convergence.Level;
-import org.squashtest.tm.plugin.custom.export.convergence.ExportTraceur;
+import org.squashtest.tm.plugin.custom.export.convergence.Traceur;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -37,7 +37,7 @@ public class ReqModel {
 	private String idSection;
 	private String section;
 
-	private ExportTraceur traceur;
+	private Traceur traceur;
 
 	/**
  * Instantiates a new req model.
@@ -64,7 +64,7 @@ public ReqModel(Long resId, Long reqId, String reference, String requirementStat
 	 * @param traceur the traceur
 	 * @return the excel row
 	 */
-	public ExcelRow updateData(ExportTraceur traceur) {
+	public ExcelRow updateData(Traceur traceur) {
 		this.traceur = traceur;
 
 		// id nécessaire pour lecture des liens exigence-CTs-(steps)

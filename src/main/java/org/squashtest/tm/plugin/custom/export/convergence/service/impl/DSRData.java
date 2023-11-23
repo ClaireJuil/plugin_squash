@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
 import org.squashtest.tm.plugin.custom.export.convergence.Level;
 import org.squashtest.tm.plugin.custom.export.convergence.Parser;
-import org.squashtest.tm.plugin.custom.export.convergence.ExportTraceur;
+import org.squashtest.tm.plugin.custom.export.convergence.Traceur;
 import org.squashtest.tm.plugin.custom.export.convergence.model.Cuf;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ExcelRow;
 import org.squashtest.tm.plugin.custom.export.convergence.model.LinkedReq;
@@ -29,7 +29,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.model.ReqModel;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ReqStepBinding;
 import org.squashtest.tm.plugin.custom.export.convergence.model.Step;
 import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
-import org.squashtest.tm.plugin.custom.export.convergence.repository.ExportRequirementsCollector;
+import org.squashtest.tm.plugin.custom.export.convergence.repository.RequirementsCollector;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -45,7 +45,7 @@ public class DSRData {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DSRData.class);
 
-	ExportRequirementsCollector reqCollector;
+	RequirementsCollector reqCollector;
 
 	private List<ExcelRow> requirements = new ArrayList<>();
 
@@ -55,7 +55,7 @@ public class DSRData {
 
 	private Map<Long, Step> steps = new HashMap<>();
 
-	private ExportTraceur traceur;
+	private Traceur traceur;
 
 	private PerimeterData perimeter;
 
@@ -65,7 +65,7 @@ public class DSRData {
 	 * @param traceur      the traceur
 	 * @param reqCollector the req collector
 	 */
-	public DSRData(ExportTraceur traceur, ExportRequirementsCollector reqCollector, PerimeterData perimeter) {
+	public DSRData(Traceur traceur, RequirementsCollector reqCollector, PerimeterData perimeter) {
 		super();
 		this.traceur = traceur;
 		this.reqCollector = reqCollector;

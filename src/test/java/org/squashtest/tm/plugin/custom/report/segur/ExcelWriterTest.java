@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,15 +18,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
 import org.squashtest.tm.plugin.custom.export.convergence.Parser;
-import org.squashtest.tm.plugin.custom.export.convergence.ExportTraceur;
+import org.squashtest.tm.plugin.custom.export.convergence.Traceur;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ExcelRow;
 import org.squashtest.tm.plugin.custom.export.convergence.model.PerimeterData;
 import org.squashtest.tm.plugin.custom.export.convergence.model.ReqStepBinding;
 import org.squashtest.tm.plugin.custom.export.convergence.model.Step;
 import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
-import org.squashtest.tm.plugin.custom.export.convergence.repository.impl.ExportRequirementsCollectorImpl;
+import org.squashtest.tm.plugin.custom.export.convergence.repository.impl.RequirementsCollectorImpl;
 import org.squashtest.tm.plugin.custom.export.convergence.service.impl.DSRData;
-import org.squashtest.tm.plugin.custom.export.convergence.service.impl.ExportExcelWriter;
+import org.squashtest.tm.plugin.custom.export.convergence.service.impl.ExcelWriter;
+
 
 /**
  * The Class ExcelWriterTest.
@@ -40,13 +41,13 @@ public class ExcelWriterTest {
 	//public static final String PREPUB_TEMPLATE_NAME = "template-segur-requirement-export-avec-colonnes-prepub.xlsx";
 	public static final String TEMPLATE_NAME = "template-segur-requirement-export-modifie.xlsx";
 	public static final String PREPUB_TEMPLATE_NAME = "template-segur-requirement-export-avec-colonnes-prepub-modifie.xlsx";
-	private ExportExcelWriter excel;
+	private ExcelWriter excel;
 
 	private DSRData data;
 
 	@BeforeEach
 	void loadData() {
-		ExportTraceur traceur = new ExportTraceur();
+		Traceur traceur = new Traceur();
 		PerimeterData perimeterData = new PerimeterData();
 		perimeterData.setMilestoneId(String.valueOf(1L));
 		perimeterData.setProjectId(String.valueOf(1L));
@@ -55,8 +56,8 @@ public class ExcelWriterTest {
 		perimeterData.setMilestoneName("MILESTONE");
 		perimeterData.setSquashBaseUrl("https://squash-segur.henix.com/squash/");
 
-		data = new DSRData(traceur, new ExportRequirementsCollectorImpl(), perimeterData);
-		excel = new ExportExcelWriter(new ExportTraceur());
+		data = new DSRData(traceur, new RequirementsCollectorImpl(), perimeterData);
+		excel = new ExcelWriter(new Traceur());
 		ExcelRow requirement1 = new ExcelRow();
 		requirement1.setResId(1L);
 		requirement1.setReqId(1L);

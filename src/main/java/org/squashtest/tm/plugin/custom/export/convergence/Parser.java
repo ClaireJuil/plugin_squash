@@ -7,7 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Entities.EscapeMode;
-//import org.jsoup.safety.Whitelist;
+import org.jsoup.safety.Whitelist;
 import org.jsoup.select.Elements;
 
 /**
@@ -24,7 +24,6 @@ public class Parser {
 	 * @return the string
 	 */
 	public static String convertHTMLtoString(String html) {
-/*		
 		String tmp = "";
 		if (html == null || html.isEmpty()) {
 			return tmp;
@@ -68,18 +67,12 @@ public class Parser {
 		doc.select("p").after("\\n");
 		doc.select("ol").after("\\n\\n");
 		doc.select("ul").after("\\n\\n");
-		String str = doc.html().replaceAll("\\\\n", "\n");		
-		
-		//a revoir en version TM 5.1.0 
-		//return Jsoup.clean(str, "", Safelist.relaxed(), outputSettings) 
-		//version TM 3.0.5
-		return Jsoup.clean(str,"", WhiteList.none(), outputSettings)
+		String str = doc.html().replaceAll("\\\\n", "\n");
+		return Jsoup.clean(str, "", Whitelist.none(), outputSettings)
 				.replaceAll("&apos;", "'")
 				.replaceAll("&quot;", "\"")
 				.replaceAll("&gt;", ">")
 				.replaceAll("&lt;", "<")
 				.replaceAll("&amp;", "&");
-*/				
-		return html;
 	}
 }
