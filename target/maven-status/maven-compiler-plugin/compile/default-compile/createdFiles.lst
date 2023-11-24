@@ -11,12 +11,12 @@ org\squashtest\tm\plugin\ans\export\convergence\Level.class
 org\squashtest\tm\plugin\ans\export\convergence\repository\RequirementsCollector.class
 org\squashtest\tm\plugin\ans\export\convergence\Constantes.class
 org\squashtest\tm\plugin\ans\export\convergence\model\Cuf.class
+org\squashtest\tm\plugin\ans\export\convergence\ConvergenceExport.class
 org\squashtest\tm\plugin\ans\export\convergence\model\ReqModel.class
 org\squashtest\tm\plugin\ans\export\convergence\Parser.class
 org\squashtest\tm\plugin\ans\export\convergence\service\impl\ReportGeneratorServiceImpl.class
 org\squashtest\tm\plugin\ans\export\convergence\model\ExcelRow.class
 org\squashtest\tm\plugin\ans\export\convergence\service\impl\DSRData.class
-org\squashtest\tm\plugin\ans\export\convergence\SegurExcelReport.class
 org\squashtest\tm\plugin\ans\export\convergence\model\Milestone.class
 org\squashtest\tm\plugin\ans\export\convergence\model\I18nHelper.class
 org\squashtest\tm\plugin\ans\export\convergence\CriteriaEntry.class

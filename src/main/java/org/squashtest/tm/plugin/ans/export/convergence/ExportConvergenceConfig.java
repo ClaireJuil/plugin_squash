@@ -35,7 +35,7 @@ public class ExportConvergenceConfig {
 	 * @return the report plugin
 	 */
 	@Bean(name = "exportConvergencePlugin")
-	public ReportPlugin segurReportPlugin(@Named("exporConvergenceReport")SegurExcelReport segurReport) {
+	public ReportPlugin exportReportPlugin(@Named("exporConvergenceReport")ConvergenceExport segurReport) {
 		Report[] reports = { segurReport };
 		ReportPlugin reportPlugin = new ReportPlugin();
 		reportPlugin.setReports(reports);
@@ -49,8 +49,8 @@ public class ExportConvergenceConfig {
 	 * @return the segur excel report
 	 */
 	@Bean(name = "exporConvergenceReport")
-	public SegurExcelReport segurReport(@Named("exportConvergenceForm")Form segurForm) {
-		SegurExcelReport segurReport = new SegurExcelReport();
+	public ConvergenceExport segurReport(@Named("exportConvergenceForm")Form segurForm) {
+		ConvergenceExport segurReport = new ConvergenceExport();
 		segurReport.setCategory(StandardReportCategory.PREPARATION_PHASE);
 		segurReport.setType(StandardReportType.SPECIFICATION_BOOK); // GENERIC
 		segurReport.setLabelKey("title");

@@ -16,7 +16,7 @@ import org.squashtest.tm.plugin.ans.export.convergence.service.ReportGeneratorSe
 /**
  * The Class SegurExcelReport.
  */
-public class SegurExcelReport extends BasicDirectDownloadableReport {
+public class ConvergenceExport extends BasicDirectDownloadableReport {
 
 	@Inject
 	@Qualifier("export.convergence.reportGeneratorServiceImpl")

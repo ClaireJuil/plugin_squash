@@ -7,13 +7,13 @@ C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\s
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\service\impl\ReportGeneratorServiceImpl.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\Message.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\service\ReportGeneratorService.java
+C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\ConvergenceExport.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\model\Step.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\model\ExcelRow.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\Level.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\model\TestCase.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\model\LinkedReq.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\Parser.java
-C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\SegurExcelReport.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\model\ReqStepBinding.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\Traceur.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\ans\export\convergence\model\Milestone.java
