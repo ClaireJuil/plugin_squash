@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.squashtest.tm.plugin.custom.export.convergence.model.ExcelRow;
+import org.squashtest.tm.plugin.ans.export.convergence.model.ExcelRow;
 
 class ExcelRowTest {
 	

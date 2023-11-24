@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
-import org.squashtest.tm.plugin.custom.export.convergence.model.Cuf;
-import org.squashtest.tm.plugin.custom.export.convergence.model.ReqModel;
+import org.squashtest.tm.plugin.ans.export.convergence.Constantes;
+import org.squashtest.tm.plugin.ans.export.convergence.model.Cuf;
+import org.squashtest.tm.plugin.ans.export.convergence.model.ReqModel;
 
 
 

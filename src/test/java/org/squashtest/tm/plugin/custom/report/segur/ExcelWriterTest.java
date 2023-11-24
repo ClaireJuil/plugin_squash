@@ -16,17 +16,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.squashtest.tm.plugin.custom.export.convergence.Constantes;
-import org.squashtest.tm.plugin.custom.export.convergence.Parser;
-import org.squashtest.tm.plugin.custom.export.convergence.Traceur;
-import org.squashtest.tm.plugin.custom.export.convergence.model.ExcelRow;
-import org.squashtest.tm.plugin.custom.export.convergence.model.PerimeterData;
-import org.squashtest.tm.plugin.custom.export.convergence.model.ReqStepBinding;
-import org.squashtest.tm.plugin.custom.export.convergence.model.Step;
-import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
-import org.squashtest.tm.plugin.custom.export.convergence.repository.impl.RequirementsCollectorImpl;
-import org.squashtest.tm.plugin.custom.export.convergence.service.impl.DSRData;
-import org.squashtest.tm.plugin.custom.export.convergence.service.impl.ExcelWriter;
+import org.squashtest.tm.plugin.ans.export.convergence.Constantes;
+import org.squashtest.tm.plugin.ans.export.convergence.Parser;
+import org.squashtest.tm.plugin.ans.export.convergence.Traceur;
+import org.squashtest.tm.plugin.ans.export.convergence.model.ExcelRow;
+import org.squashtest.tm.plugin.ans.export.convergence.model.PerimeterData;
+import org.squashtest.tm.plugin.ans.export.convergence.model.ReqStepBinding;
+import org.squashtest.tm.plugin.ans.export.convergence.model.Step;
+import org.squashtest.tm.plugin.ans.export.convergence.model.TestCase;
+import org.squashtest.tm.plugin.ans.export.convergence.repository.impl.RequirementsCollectorImpl;
+import org.squashtest.tm.plugin.ans.export.convergence.service.impl.DSRData;
+import org.squashtest.tm.plugin.ans.export.convergence.service.impl.ExcelWriter;
 
 
 /**
