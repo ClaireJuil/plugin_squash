@@ -3,7 +3,6 @@ C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\s
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\model\ReqStepBinding.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\Constantes.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\Level.java
-C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\CustomReportSegurConfig.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\Parser.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\repository\impl\RequirementsCollectorImpl.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\model\Cuf.java
@@ -11,6 +10,7 @@ C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\s
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\model\I18nHelper.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\model\ExcelRow.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\CriteriaEntry.java
+C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\ExportConvergenceConfig.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\model\ReqModel.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\repository\RequirementsCollector.java
 C:\Users\cjuillard\Documents\segur\squash-convergence-plugin\src\main\java\org\squashtest\tm\plugin\custom\export\convergence\model\TestCaseStep.java

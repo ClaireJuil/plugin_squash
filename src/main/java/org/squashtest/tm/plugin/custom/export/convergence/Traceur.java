@@ -14,7 +14,7 @@ import lombok.Getter;
 /**
  * The Class Traceur.
  */
-@Component
+@Component("export.convergence.traceur")
 public class Traceur {
 
 	@Getter

@@ -26,7 +26,7 @@ import org.squashtest.tm.api.report.form.composite.ProjectPickerOption;
  * The Class CustomReportSegurConfig.
  */
 @Configuration
-public class CustomReportSegurConfig {
+public class ExportConvergenceConfig {
 
 	/**
 	 * Segur report plugin.
@@ -34,8 +34,8 @@ public class CustomReportSegurConfig {
 	 * @param segurReport the segur report
 	 * @return the report plugin
 	 */
-	@Bean
-	public ReportPlugin segurReportPlugin(SegurExcelReport segurReport) {
+	@Bean(name = "exportConvergencePlugin")
+	public ReportPlugin segurReportPlugin(@Named("exporConvergenceReport")SegurExcelReport segurReport) {
 		Report[] reports = { segurReport };
 		ReportPlugin reportPlugin = new ReportPlugin();
 		reportPlugin.setReports(reports);
@@ -48,8 +48,8 @@ public class CustomReportSegurConfig {
 	 * @param segurForm the segur form
 	 * @return the segur excel report
 	 */
-	@Bean
-	public SegurExcelReport segurReport(Form segurForm) {
+	@Bean(name = "exporConvergenceReport")
+	public SegurExcelReport segurReport(@Named("exportConvergenceForm")Form segurForm) {
 		SegurExcelReport segurReport = new SegurExcelReport();
 		segurReport.setCategory(StandardReportCategory.PREPARATION_PHASE);
 		segurReport.setType(StandardReportType.SPECIFICATION_BOOK); // GENERIC
@@ -64,8 +64,8 @@ public class CustomReportSegurConfig {
 	 * @param segurRadioButton the segur radio button
 	 * @return the form
 	 */
-	@Bean
-	public Form segurForm(@Named("segurRadioButton") RadioButtonsGroup segurRadioButton) {//,
+	@Bean(name = "exportConvergenceForm")
+	public Form segurForm(@Named("exportRadioButton") RadioButtonsGroup segurRadioButton) {//,
 	//					  @Named("templateSelectionRadioButton") RadioButtonsGroup templateSelectionRadioButton) {
 		Form form = new Form();
 		List<Input> inputs = new ArrayList<Input>();

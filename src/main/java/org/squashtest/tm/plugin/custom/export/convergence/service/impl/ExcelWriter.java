@@ -42,7 +42,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.model.TestCase;
 /**
  * The Class ExcelWriter.
  */
-@Component
+@Component("export.convergence.excelWriter")
 public class ExcelWriter {
 
 	private static final String EXCLUDED_TC_STATUS = "OBSOLETE";

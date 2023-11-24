@@ -52,7 +52,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.repository.Requirement
 /**
  * The Class RequirementsCollectorImpl.
  */
-@Repository //@Qualifier("segurReportRepository")
+@Repository("export.convergence.repository")
 public class RequirementsCollectorImpl implements RequirementsCollector {
 
 	@Inject

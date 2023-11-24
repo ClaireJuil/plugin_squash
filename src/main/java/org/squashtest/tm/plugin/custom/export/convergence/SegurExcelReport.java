@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.squashtest.tm.api.report.BasicDirectDownloadableReport;
 import org.squashtest.tm.api.report.criteria.Criteria;
 import org.squashtest.tm.plugin.custom.export.convergence.service.ReportGeneratorService;
@@ -18,6 +19,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.service.ReportGenerato
 public class SegurExcelReport extends BasicDirectDownloadableReport {
 
 	@Inject
+	@Qualifier("export.convergence.reportGeneratorServiceImpl")
 	ReportGeneratorService reportGeneratorService;
 
 	@Override

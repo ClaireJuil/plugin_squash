@@ -28,7 +28,7 @@ import org.squashtest.tm.plugin.custom.export.convergence.service.ReportGenerato
 /**
  * The Class ReportGeneratorServiceImpl.
  */
-@Service
+@Service("export.convergence.reportGeneratorServiceImpl")
 public class ReportGeneratorServiceImpl implements ReportGeneratorService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ReportGeneratorServiceImpl.class);
 	

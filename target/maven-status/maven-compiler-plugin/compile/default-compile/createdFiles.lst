@@ -6,10 +6,10 @@ org\squashtest\tm\plugin\custom\export\convergence\Parser.class
 org\squashtest\tm\plugin\custom\export\convergence\model\ReqStepBinding.class
 org\squashtest\tm\plugin\custom\export\convergence\service\impl\ExcelWriter.class
 org\squashtest\tm\plugin\custom\export\convergence\SegurExcelReport.class
-org\squashtest\tm\plugin\custom\export\convergence\CustomReportSegurConfig.class
 org\squashtest\tm\plugin\custom\export\convergence\repository\impl\RequirementsCollectorImpl.class
 org\squashtest\tm\plugin\custom\export\convergence\Message.class
 org\squashtest\tm\plugin\custom\export\convergence\Constantes.class
+org\squashtest\tm\plugin\custom\export\convergence\ExportConvergenceConfig.class
 org\squashtest\tm\plugin\custom\export\convergence\service\impl\ReportGeneratorServiceImpl.class
 org\squashtest\tm\plugin\custom\export\convergence\model\LinkedReq.class
 org\squashtest\tm\plugin\custom\export\convergence\model\ReqModel.class
